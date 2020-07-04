@@ -27,15 +27,17 @@ namespace TwoSum
              {
                 if (nums[i] + nums[j] == target)
                 {
-                    Console.WriteLine($"The numbers in the array that add to {target} are [{i}] and [{j}]");
+                    //Console.WriteLine($"The numbers in the array that add to {target} are [{i}] and [{j}]");
+                    //return i, j; 
                     j++;
                 }
 
                 i++;
-                //int index1 = int nums.Indexof(Array nums, [i]);
-                //return nums.IndexOf[i]; [i + i];
+                
             }
-                return nums;
+            int indexI = Array.IndexOf<int>(nums, i);
+            int indexJ = Array.IndexOf<int>(nums, j);
+                return [indexI, indexJ];
         }
     } 
 }
