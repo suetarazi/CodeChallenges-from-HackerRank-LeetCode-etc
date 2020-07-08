@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Reflection.Metadata;
 
 namespace TwoSum
 {
@@ -9,9 +10,9 @@ namespace TwoSum
         {
             Console.WriteLine("Hello World!");
             int[] nums = new int[] { 1, 2, 1, 7, 11, 15 };
-            int target = 9;
+            int target = 4;
             Solution s = new Solution();
-            int[] result = s.TwoSum(nums, target);
+            int[] result = s.TwoSumPrime(nums, target);
             foreach (int num in result)
             {
                 Console.WriteLine($"The result is { num }");
@@ -21,6 +22,23 @@ namespace TwoSum
 
     public class Solution
     {
+        public int[] TwoSumPrime(int[] nums, int target)
+        {
+            for (int i = 0; i < nums.Length - 1; i++)
+            {
+                for (int j = i+1; j < nums.Length; j++)
+                {
+                    if (nums[i] + nums[j] == target)
+                    {
+                        Console.WriteLine($"The numbers in the array that add to {target} are [{i}] and [{j}]");
+                        int[] returnArr = new int[] { i, j };
+                        return returnArr;
+                    }
+                }
+            }
+            return null;
+        }
+
         public int[] TwoSum(int[] nums, int target)
         {
             int i = 0;
@@ -38,10 +56,9 @@ namespace TwoSum
                         return returnArr;
 
                     }
-                    // else
-                    //{
+                
                     j++;
-                    //}
+                    
                 }
             i++;
                 j = i + 1;    
