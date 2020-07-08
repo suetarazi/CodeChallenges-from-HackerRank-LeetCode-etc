@@ -10,7 +10,7 @@ namespace TwoSum
         {
             Console.WriteLine("Hello World!");
             int[] nums = new int[] { 1, 2, 1, 7, 11, 15 };
-            int target = 4;
+            int target = 9;
             Solution s = new Solution();
             int[] result = s.TwoSumPrime(nums, target);
             foreach (int num in result)
@@ -24,10 +24,11 @@ namespace TwoSum
     {
         public int[] TwoSumPrime(int[] nums, int target)
         {
-            for (int i = 0; i < nums.Length - 1; i++)
+            for (int i = 0; i < nums.Length - 1; i++)  // N O(N^2)
             {
-                for (int j = i+1; j < nums.Length; j++)
+                for (int j = i+1; j < nums.Length; j++)  // N - O(N)
                 {
+                    // O(1)
                     if (nums[i] + nums[j] == target)
                     {
                         Console.WriteLine($"The numbers in the array that add to {target} are [{i}] and [{j}]");
