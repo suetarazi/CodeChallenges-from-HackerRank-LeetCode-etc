@@ -12,6 +12,8 @@ namespace TwoSum
             int[] nums = new int[] { 1, 2, 1, 7, 11, 15 };
             int target = 9;
             Solution s = new Solution();
+            
+            //need to check result being passed from the method in the following fashion:
             int[] result = s.TwoSumPrime(nums, target);
             foreach (int num in result)
             {
