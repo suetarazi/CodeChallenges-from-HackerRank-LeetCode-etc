@@ -13,9 +13,11 @@ namespace TwoSum
             int[] nums = new int[] { 1, 2, 1, 7, 11, 15 };
             int target = 9;
             Solution s = new Solution();
-            
+            //s.TwoSumHash(nums, target);
+
             //need to check result being passed from the method in the following fashion:
-            int[] result = s.TwoSumPrime(nums, target);
+            //int[] result = s.TwoSumPrime(nums, target);
+            int[] result = s.TwoSumHash(nums, target);
             foreach (int num in result)
             {
                 Console.WriteLine($"The result is { num }");
@@ -53,12 +55,26 @@ namespace TwoSum
         public int[] TwoSumHash(int[] nums, int target)
         {
             Hashtable hashtable = new Hashtable();
-            for(int i=0; i<nums.Length; i++)
+            for(int i=0; i<nums.Length-1; i++)
             {
-                hashtable.Add(nums[i], i);
+                hashtable.Add(i, nums[i]);
+                int compliment = target - nums[i];
+                if()
             }
 
+            for(int i=0; i<nums.Length; i++)
+            {
+                int compliment = target - nums[i];
+                if ((hashtable.ContainsKey(compliment)) && (hashtable.ContainsValue(compliment != i)))
+                        {
+                        return new int[] { i, compliment};
 
+                        }
+                
+            }
+
+            Console.WriteLine("No matches found");
+            throw new Exception(message : "No matches found");
         }
 
         public int[] TwoSum(int[] nums, int target)
