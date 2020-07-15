@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Globalization;
 using System.Reflection.Metadata;
 
@@ -22,8 +23,15 @@ namespace TwoSum
         }
     }
 
+  
     public class Solution
     {
+        /// <summary>
+        /// Solution using two nested for loops for a runtime complexity of On^2
+        /// </summary>
+        /// <param name="nums">integer array</param>
+        /// <param name="target">integer for two numbers to add to</param>
+        /// <returns></returns>
         public int[] TwoSumPrime(int[] nums, int target)
         {
             for (int i = 0; i < nums.Length - 1; i++)  // N O(N^2)
@@ -40,6 +48,17 @@ namespace TwoSum
                 }
             }
             return null;
+        }
+
+        public int[] TwoSumHash(int[] nums, int target)
+        {
+            Hashtable hashtable = new Hashtable();
+            for(int i=0; i<nums.Length; i++)
+            {
+                hashtable.Add(nums[i], i);
+            }
+
+
         }
 
         public int[] TwoSum(int[] nums, int target)
