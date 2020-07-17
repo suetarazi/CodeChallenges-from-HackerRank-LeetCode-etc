@@ -17,7 +17,7 @@ namespace two_arrays_of_names_to_one
     {
         public static string[] UniqueNames(string[] names1, string[] names2)
         {
-            throw new NotImplementedException();
+            
             Hashtable hashtable = new Hashtable();
             
             for(int i=0; i<names1.Length; i++)
@@ -26,16 +26,18 @@ namespace two_arrays_of_names_to_one
             }
 
             List<string> resultList = new List<string>();
-            for(int i=0; i<names2.Length; i++)
+            for(int j=0; j<names2.Length; j++)
             {
-                if (hashtable.Contains(names2[i]))
+                if (!hashtable.Contains(names2[j]))
                 {
                     //do nothing
+                    hashtable.Add(j, names2[j]);
+                    
                 }
-                else
-                {
-                    hashtable.Add(i, names2[i]);
-                }
+                //else
+                //{
+                //    hashtable.Add(i, names2[i]);
+                //}
             }
             foreach (string name in hashtable)
             {
