@@ -8,7 +8,8 @@ namespace MaxSeatSpace
         {
             Console.WriteLine("Hello World!");
             Solution s = new Solution();
-            int[] seats = new int[] { 1, 0, 0, 0, 1, 0, 1 };
+            int[] seats = new int[] { 1, 0, 0, 0, 1 };
+            //int[] seats = new int[] { 1, 0, 0, 0, 1, 0, 1 };
             Console.WriteLine(s.MaxDistToClosest(seats)); 
         }
 
