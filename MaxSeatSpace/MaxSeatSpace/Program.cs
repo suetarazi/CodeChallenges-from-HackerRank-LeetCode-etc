@@ -29,9 +29,9 @@ namespace MaxSeatSpace
             {
                 if(seats[i]==0)
                 {
+                    maxStartIndex = i;
                     count++;
                     max = count;
-                    maxStartIndex = i;
                 }
             }
             
