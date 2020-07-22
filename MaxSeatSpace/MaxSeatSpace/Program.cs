@@ -8,8 +8,8 @@ namespace MaxSeatSpace
         {
             Console.WriteLine("Hello World!");
             Solution s = new Solution();
-            int[] seats = new int[] { 1, 0, 0, 0, 1 };
-            //int[] seats = new int[] { 1, 0, 0, 0, 1, 0, 1 };
+            //int[] seats = new int[] { 1, 0, 0, 0, 1 };
+            int[] seats = new int[] { 1, 0, 0, 0, 1, 0, 1 };
             Console.WriteLine(s.MaxDistToClosest(seats)); 
         }
 
@@ -28,7 +28,7 @@ namespace MaxSeatSpace
             int assignedSeat = 0;
             for(int i = 0; i < seats.Length; i++)
             {
-                if(seats[i]==0)
+                if(seats[i]==0 && seats[i+1]!=1)
                 {
                     maxStartIndex = i;
                     count++;
