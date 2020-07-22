@@ -37,16 +37,19 @@ namespace MaxSeatSpace
             
             if(maxStartIndex == 0)
             {
-                return assignedSeat = seats[0];
+                assignedSeat = seats[0];
+                return assignedSeat;
             }
             else if(maxStartIndex+max == seats.Length)
             {
-                return assignedSeat = seats.Length;
+                assignedSeat = seats.Length;
+                return assignedSeat;
             }
             else
             {
                 int x = (max - maxStartIndex) / 2;
-                return assignedSeat = maxStartIndex + x;
+                assignedSeat = maxStartIndex + x;
+                return assignedSeat;
 
             }
         }
