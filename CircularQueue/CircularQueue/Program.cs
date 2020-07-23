@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace CircularQueue
 {
@@ -55,8 +55,15 @@ namespace CircularQueue
             // Implement me!
         }
 
+
+
         public IEnumerator<T> GetEnumerator()
         {
+
+            HashSet<string> listNames = new HashSet<string>();
+            listNames.Add();
+            listNames.SymmetricExceptWith
+               
             throw new NotImplementedException();
         }
 
