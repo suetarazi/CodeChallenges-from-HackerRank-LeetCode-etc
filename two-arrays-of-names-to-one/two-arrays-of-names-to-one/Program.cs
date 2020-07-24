@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace two_arrays_of_names_to_one
 {
@@ -18,34 +19,23 @@ namespace two_arrays_of_names_to_one
         public static string[] UniqueNames(string[] names1, string[] names2)
         {
             
-            Dictionary<int, string> hashtable = new Dictionary<int, string>();
+            HashSet<string> hashset = new HashSet<string>();
             
             for(int i=0; i<names1.Length; i++)
             {
-                hashtable.Add(i, names1[i]);
+                hashset.Add(names1[i]);
             }
 
-            List<string> resultList = new List<string>();
-            for(int j=0; j<names2.Length; j++)
+            //List<string> resultList = new List<string>();
+            for (int j = 0; j < names2.Length; j++)
             {
-                if (hashtable.!Contains<string>(names2[j]))
+                if (!hashset.Contains(names2[j]))
                 {
-                    //do nothing
-                    hashtable.Add(j, names2[j]);
-                    
+                    hashset.Add(names2[j]);
+
                 }
-                //else
-                //{
-                //    hashtable.Add(i, names2[i]);
-                //}
-            }
-            for(int i=0; i<hashtable.Length; i++)
-            {
-                resultList.Add(name);
-            }
-
-            return resultList.ToArray();
-
+            }    
+                return hashset.ToArray<string>();
         }
 
     }
