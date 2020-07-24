@@ -46,21 +46,26 @@ namespace Rotate180Degrees
             {
                 case '2':
                     c = '5';
+                    Console.WriteLine($"2 is now {c}");
                     break;
                     
                 case '5':
                     c = '2';
+                    Console.WriteLine($"5 is now {c}");
                     break;
                 case '6':
                     c = '9';
+                    Console.WriteLine($"6 is now {c}");
                     break;
                 case '9':
                     c = '6';
+                    Console.WriteLine($"9 is now {c}");
                     break;
                 default:
                     c = c;
                     break;
             }
+            Console.WriteLine($"return statement from switch is {c.ToString()}");
             return c.ToString();
         }
         //            if (charN[i] == 2)
