@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 
@@ -12,24 +13,27 @@ namespace Rotate180Degrees
             Console.WriteLine("Hello World!");
             Solution s = new Solution();
             int N = 34563;
-            int totalCount = s.RotatedDigits(N);
+            List<string> totalCount = s.RotatedDigits(N);
             Console.WriteLine(totalCount);
         }
     }
 
     public class Solution
     {
-        public int RotatedDigits(int N)
+        public List<string> RotatedDigits(int N)
         {
             string strN = N.ToString();
-            string result = " ";
+            List<string> result = new List<string>();
             //Console.WriteLine($"strN is {strN}");
             foreach (char c in strN)
             {
-                result = += Map(c);
+                result.Add(Map(c));
+                Console.WriteLine($"{c} value was added to the result list");
             }
 
-            return int.Parse(result);
+            Console.WriteLine($"The result is {result}");
+            return result;
+            //return int.Parse(result);
 
             int count = 0;
             int totalCount = 0;
