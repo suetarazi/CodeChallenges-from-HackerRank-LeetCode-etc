@@ -27,11 +27,11 @@ namespace Rotate180Degrees
             //Console.WriteLine($"strN is {strN}");
             foreach (char c in strN)
             {
-                result.Add(Map(c));
                 Console.WriteLine($"{c} value was added to the result list");
+                result.Add(Map(c));
             }
 
-            Console.WriteLine($"The result is {result}");
+            Console.WriteLine($"We are back from the switch and the result is {result}");
             return result;
             //return int.Parse(result);
 
@@ -67,6 +67,7 @@ namespace Rotate180Degrees
             }
             Console.WriteLine($"return statement from switch is {c.ToString()}");
             return c.ToString();
+            
         }
         //            if (charN[i] == 2)
         //            {
