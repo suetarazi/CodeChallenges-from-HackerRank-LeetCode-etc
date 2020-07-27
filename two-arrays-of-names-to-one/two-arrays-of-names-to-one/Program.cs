@@ -11,7 +11,8 @@ namespace two_arrays_of_names_to_one
         {
             string[] names1 = new string[] { "Ava", "Emma", "Olivia" };
             string[] names2 = new string[] { "Olivia", "Sophia", "Emma" };
-            Console.WriteLine(string.Join(", ", MergeNames.UniqueNames(names1, names2))); // should print Ava, Emma, Olivia, Sophia
+            //Console.WriteLine(string.Join(", ", MergeNames.UniqueNames(names1, names2))); // should print Ava, Emma, Olivia, Sophia
+            Console.WriteLine(string.Join(", ", MergeNames.UniqueNames2(names1, names2)));
         }
     }
     public class MergeNames
@@ -38,5 +39,16 @@ namespace two_arrays_of_names_to_one
                 return hashset.ToArray<string>();
         }
 
+    public static string[] UniqueNames2(string[] names1, string[] names2)
+        {
+            var union = names1.Union(names2);
+            List<string> result = new List<string>();
+            foreach(string name in union)
+            {
+                //Console.WriteLine(name);
+                result.Add(name);
+            }
+            return result.ToArray();
+        }
     }
 }
