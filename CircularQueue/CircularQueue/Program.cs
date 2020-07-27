@@ -1,7 +1,9 @@
-﻿using System;
+﻿using CircularQueue.Classes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+
 
 namespace CircularQueue
 {
@@ -17,19 +19,28 @@ namespace CircularQueue
     public class CircularBuffer<T> : IEnumerable<T>
     {
         private readonly T[] data;
+        private static object node;
+
+        public int pointer1 { get; set; }
+        public int pointer2 { get; set; }
 
         public CircularBuffer(int size)
         {
             this.data = new T[size];
+            int maxSize = size - 1;
         }
 
         // Return the number of items in the buffer
-        public int Count
+        public static int Count()
         {
-            get
+            int count = 0;
+        
+            if(node != null)
             {
-                // Implement me!
+                count++;
+                node = node.Next;
             }
+            return count;
         }
 
         // Returns the item at the specified offest in the queue (from head).  Throws
