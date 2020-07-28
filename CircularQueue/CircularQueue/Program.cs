@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Net.Http.Headers;
 
 namespace CircularQueue
 {
@@ -12,6 +12,7 @@ namespace CircularQueue
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            int size = 16; 
         }
     }
 
@@ -21,8 +22,8 @@ namespace CircularQueue
         private readonly T[] data;
         private static object node;
 
-        public int pointer1 { get; set; }
-        public int pointer2 { get; set; }
+        public int front { get; set; }
+        public int rear { get; set; }
 
         public CircularBuffer(int size)
         {
