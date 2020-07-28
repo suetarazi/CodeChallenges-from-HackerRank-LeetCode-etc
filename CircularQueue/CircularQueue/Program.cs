@@ -68,6 +68,7 @@ namespace CircularQueue
             if (queue.Count != size)
             {
                 queue.Enqueue(item);
+                rear = item;
                 return true;
             }
             else
@@ -80,7 +81,17 @@ namespace CircularQueue
         // InvalidOperationException if the queue is empty.
         public T Dequeue()
         {
-            // Implement me!
+            if(queue.Peek = null)
+            {
+                throw new InvalidOperationException("The buffer is empty");
+            }
+            else
+            {
+                int temp = front + 1;
+                queue.Dequeue();
+                front = temp;
+
+            }
         }
 
 
