@@ -81,34 +81,34 @@ namespace CircularQueue
         // InvalidOperationException if the queue is empty.
         public T Dequeue()
         {
-            if(queue.Peek = null)
+            if(queue.Peek() == null)
             {
                 throw new InvalidOperationException("The buffer is empty");
             }
             else
             {
                 int temp = front + 1;
-                queue.Dequeue();
                 front = temp;
+                return (T)queue.Dequeue();
 
             }
         }
 
 
 
-        public IEnumerator<T> GetEnumerator()
-        {
+        ////public IEnumerator<T> GetEnumerator()
+        ////{
 
-            HashSet<string> listNames = new HashSet<string>();
-            listNames.Add();
-            listNames.SymmetricExceptWith
+        ////    HashSet<string> listNames = new HashSet<string>();
+        ////    listNames.Add();
+        ////    listNames.SymmetricExceptWith
                
-            throw new NotImplementedException();
-        }
+        ////    throw new NotImplementedException();
+        ////}
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+        ////IEnumerator IEnumerable.GetEnumerator()
+        ////{
+        ////    throw new NotImplementedException();
+        ////}
     }
 }
