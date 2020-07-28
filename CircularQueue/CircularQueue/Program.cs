@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Net.Http.Headers;
 
@@ -25,6 +26,9 @@ namespace CircularQueue
         public int front { get; set; }
         public int rear { get; set; }
 
+        int size = 16;
+
+        Queue queue = new Queue(size);
         public CircularBuffer(int size)
         {
             this.data = new T[size];
@@ -34,6 +38,9 @@ namespace CircularQueue
         // Return the number of items in the buffer
         public static int Count()
         {
+            //built in queue class contains a method called Count
+            //return queue.Count;
+
             int count = 0;
         
             if(node != null)
@@ -42,6 +49,7 @@ namespace CircularQueue
                 node = node.Next;
             }
             return count;
+
         }
 
         // Returns the item at the specified offest in the queue (from head).  Throws
@@ -55,9 +63,17 @@ namespace CircularQueue
         }
 
         // Adds the item to the end if there's room.  Returns true if successful.
-        public bool Enqueue(T item)
+        public bool Enqueue(int item)
         {
-            // Implement me!
+            if (queue.Count != size)
+            {
+                queue.Enqueue(item);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         // Removes and returns the item at the front of the queue.  Throws
