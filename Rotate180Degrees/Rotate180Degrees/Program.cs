@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Text;
 
 namespace Rotate180Degrees
 {
@@ -14,7 +15,13 @@ namespace Rotate180Degrees
             Solution s = new Solution();
             int N = 34563;
             List<string> totalCount = s.RotatedDigits(N);
-            Console.WriteLine(totalCount);
+            StringBuilder sb = new StringBuilder();
+            foreach (string t in totalCount)
+            {
+                sb.Append(t);
+                Console.WriteLine(t);
+            }
+            Console.WriteLine($"The stringbuilder result is {sb}");
         }
     }
 
