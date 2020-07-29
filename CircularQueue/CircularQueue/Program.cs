@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -23,12 +24,14 @@ namespace CircularQueue
         private readonly T[] data;
         private static object node;
 
-        public int front { get; set; }
-        public int rear { get; set; }
+        private int _front;
+        private int _rear;
+        private int _count;
 
         int size = 16;
 
-        Queue queue = new Queue(size);
+          
+        
         public CircularBuffer(int size)
         {
             this.data = new T[size];
@@ -36,20 +39,12 @@ namespace CircularQueue
         }
 
         // Return the number of items in the buffer
-        public static int Count()
+        public int Count
         {
-            //built in queue class contains a method called Count
-            //return queue.Count;
-
-            int count = 0;
-        
-            if(node != null)
+            get
             {
-                count++;
-                node = node.Next;
+                return this._count;
             }
-            return count;
-
         }
 
         // Returns the item at the specified offest in the queue (from head).  Throws
@@ -58,53 +53,65 @@ namespace CircularQueue
         {
             get
             {
-                // Implement me!
+                return this.data[(_front + index) % this.data.Length];
+            if(_front + index >= this.data.Length)
+                {
+                    index = _front - this.data.Length + index;                   
+                    return this.data[index];
+                }
+            
+            T value = this.data[_front + index];
+                return value;
             }
         }
 
         // Adds the item to the end if there's room.  Returns true if successful.
-        public bool Enqueue(int item)
+        public bool Enqueue(T item)
         {
-            if (queue.Count != size)
+            // TODO: What happens when you get to the end of the array, an dit's not full?
+            // TODO: What happens when the queue is full?
+            _rear++;
+            if (_rear >= this.data.Length)
             {
-                queue.Enqueue(item);
-                rear = item;
-                return true;
+                _rear = 0;
             }
-            else
-            {
-                return false;
-            }
+            this.data[_rear] = item;
+            //] data + (_rear * sizeof(T))
+            return true;
         }
 
         // Removes and returns the item at the front of the queue.  Throws
         // InvalidOperationException if the queue is empty.
         public T Dequeue()
         {
-            if(queue.Peek = null)
+            if()
             {
                 throw new InvalidOperationException("The buffer is empty");
             }
             else
             {
-                int temp = front + 1;
-                queue.Dequeue();
-                front = temp;
+                T value = this.data[_front];
+                _front++;
+                    if(_front >= this.data.Length)
+                    {
+                        _front = 0;
+                    }
+                return value;
 
             }
         }
 
 
 
-        public IEnumerator<T> GetEnumerator()
-        {
+        ////public IEnumerator<T> GetEnumerator()
+        ////{
 
-            HashSet<string> listNames = new HashSet<string>();
-            listNames.Add();
-            listNames.SymmetricExceptWith
-               
-            throw new NotImplementedException();
-        }
+        ////    HashSet<string> listNames = new HashSet<string>();
+        ////    listNames.Add();
+        ////    listNames.SymmetricExceptWith
+
+        ////    throw new NotImplementedException();
+        ////}
 
         IEnumerator IEnumerable.GetEnumerator()
         {
