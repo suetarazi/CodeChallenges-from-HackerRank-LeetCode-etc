@@ -76,6 +76,7 @@ namespace CircularQueue
                 _rear = 0;
             }
             this.data[_rear] = item;
+            _count++;
             //] data + (_rear * sizeof(T))
             return true;
         }
@@ -84,13 +85,14 @@ namespace CircularQueue
         // InvalidOperationException if the queue is empty.
         public T Dequeue()
         {
-            if()
+            if(_rear + 1 == _front)
             {
                 throw new InvalidOperationException("The buffer is empty");
             }
             else
             {
                 T value = this.data[_front];
+                _count--;
                 _front++;
                     if(_front >= this.data.Length)
                     {
@@ -103,15 +105,15 @@ namespace CircularQueue
 
 
 
-        ////public IEnumerator<T> GetEnumerator()
-        ////{
+        public IEnumerator<T> GetEnumerator()
+        {
 
-        ////    HashSet<string> listNames = new HashSet<string>();
-        ////    listNames.Add();
-        ////    listNames.SymmetricExceptWith
+            HashSet<string> listNames = new HashSet<string>();
+            //listNames.Add();
+            //listNames.SymmetricExceptWith
 
-        ////    throw new NotImplementedException();
-        ////}
+            throw new NotImplementedException();
+        }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
