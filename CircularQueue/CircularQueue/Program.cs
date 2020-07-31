@@ -68,7 +68,7 @@ namespace CircularQueue
         // Adds the item to the end if there's room.  Returns true if successful.
         public bool Enqueue(T item)
         {
-            // TODO: What happens when you get to the end of the array, an dit's not full?
+            // TODO: What happens when you get to the end of the array, and it's not full?
             // TODO: What happens when the queue is full?
             _rear++;
             if (_rear >= this.data.Length)
