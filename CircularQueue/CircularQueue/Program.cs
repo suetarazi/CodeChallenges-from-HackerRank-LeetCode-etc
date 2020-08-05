@@ -14,7 +14,7 @@ namespace CircularQueue
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            int size = 16; 
+            //int size = 16; 
         }
     }
 
@@ -28,13 +28,14 @@ namespace CircularQueue
         private int _rear;
         private int _count;
 
-        int size = 16;
+        int size;
 
           
         
         public CircularBuffer(int size)
         {
-            this.data = new T[size];
+            data = new T[size];
+            this.size = size;
             
         }
 
@@ -43,7 +44,7 @@ namespace CircularQueue
         {
             get
             {
-                return this._count;
+                return _count;
             }
         }
 
@@ -53,7 +54,7 @@ namespace CircularQueue
         {
             get
             {
-                return this.data[(_front + index) % this.data.Length];
+                return data[(_front + index) % data.Length];
             //if(_front + index >= this.data.Length)
             //    {
             //        index = _front - this.data.Length + index;                   
@@ -71,7 +72,7 @@ namespace CircularQueue
             // TODO: What happens when you get to the end of the array, and it's not full?
             // TODO: What happens when the queue is full?
 
-            int maxSize = size - 1;
+            int maxSize = size;
             
             if (Count == maxSize)
             {
@@ -80,11 +81,11 @@ namespace CircularQueue
             else
             {
                 _rear++;
-                if (_rear >= this.data.Length)
+                if (_rear >= data.Length)
                 {
                     _rear = 0;
                 }
-                this.data[_rear] = item;
+                data[_rear] = item;
                 _count++;
                 //] data + (_rear * sizeof(T))
                 return true;
@@ -95,19 +96,20 @@ namespace CircularQueue
         // InvalidOperationException if the queue is empty.
         public T Dequeue()
         {
-            if(_rear + 1 == _front)
+            // % size of buffer
+            if(Count == 0)
             {
                 throw new InvalidOperationException("The buffer is empty");
             }
             else
             {
-                T value = this.data[_front];
                 _count--;
                 _front++;
-                    if(_front >= this.data.Length)
+                    if(_front >= data.Length)
                     {
                         _front = 0;
                     }
+                T value = data[_front];
                 return value;
 
             }
