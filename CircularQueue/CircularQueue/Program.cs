@@ -22,7 +22,7 @@ namespace CircularQueue
     public class CircularBuffer<T> : IEnumerable<T>
     {
         private readonly T[] data;
-        private static object node;
+        //private static object node;
 
         private int _front;
         private int _rear;
