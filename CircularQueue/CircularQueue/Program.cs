@@ -35,7 +35,7 @@ namespace CircularQueue
         public CircularBuffer(int size)
         {
             this.data = new T[size];
-            int maxSize = size - 1;
+            
         }
 
         // Return the number of items in the buffer
@@ -54,14 +54,14 @@ namespace CircularQueue
             get
             {
                 return this.data[(_front + index) % this.data.Length];
-            if(_front + index >= this.data.Length)
-                {
-                    index = _front - this.data.Length + index;                   
-                    return this.data[index];
-                }
+            //if(_front + index >= this.data.Length)
+            //    {
+            //        index = _front - this.data.Length + index;                   
+            //        return this.data[index];
+            //    }
             
-            T value = this.data[_front + index];
-                return value;
+            //T value = this.data[_front + index];
+            //    return value;
             }
         }
 
@@ -70,15 +70,25 @@ namespace CircularQueue
         {
             // TODO: What happens when you get to the end of the array, and it's not full?
             // TODO: What happens when the queue is full?
-            _rear++;
-            if (_rear >= this.data.Length)
+
+            int maxSize = size - 1;
+            
+            if (Count == maxSize)
             {
-                _rear = 0;
+                return false;
             }
-            this.data[_rear] = item;
-            _count++;
-            //] data + (_rear * sizeof(T))
-            return true;
+            else
+            {
+                _rear++;
+                if (_rear >= this.data.Length)
+                {
+                    _rear = 0;
+                }
+                this.data[_rear] = item;
+                _count++;
+                //] data + (_rear * sizeof(T))
+                return true;
+            }
         }
 
         // Removes and returns the item at the front of the queue.  Throws
