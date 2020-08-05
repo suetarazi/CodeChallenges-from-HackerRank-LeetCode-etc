@@ -72,7 +72,7 @@ namespace CircularQueue
             // TODO: What happens when you get to the end of the array, and it's not full?
             // TODO: What happens when the queue is full?
 
-            int maxSize = size;
+            int maxSize = data.Length;
             
             if (Count == maxSize)
             {
