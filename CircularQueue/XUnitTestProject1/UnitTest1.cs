@@ -49,6 +49,16 @@ namespace XUnitTestProject1
 
         }
 
+        [Fact]
+        public void EnqueueItemDequeueItem()
+        {
+            CircularBuffer<int> testData = new CircularBuffer<int>(16);
+            int item = 5;
+            testData.Enqueue(item);
+            int actual = testData.Dequeue();
+            int expected = 5;
+            Assert.Equal(expected, actual);
+        }
         /// <summary>
         /// test that enqueues three items, dequeues one item and then counts number of items in the queue 
         /// </summary>
@@ -68,7 +78,50 @@ namespace XUnitTestProject1
             Assert.Equal(expected, actual);
         }
 
+        [Fact]
+        public void EnqueueFiveDequeueThreeItemsReturnValue()
+        {
+            CircularBuffer<int> testData = new CircularBuffer<int>(6);
+            int item1 = 6;
+            int item2 = 8;
+            int item3 = 10;
+            int item4 = 15;
+            int item5 = 22;
+            testData.Enqueue(item1);
+            testData.Enqueue(item2);
+            testData.Enqueue(item3);
+            testData.Enqueue(item4);
+            testData.Enqueue(item5);
+            testData.Dequeue();
+            testData.Dequeue();
+            int actual = testData.Dequeue();
+            int expected = 10;
+            Assert.Equal(expected, actual);
 
+        }
+
+        [Fact]
+        public void EnqueueFiveDequeueThreeItemsReturnCount()
+        {
+            CircularBuffer<int> testData = new CircularBuffer<int>(6);
+            int item1 = 6;
+            int item2 = 8;
+            int item3 = 10;
+            int item4 = 15;
+            int item5 = 22;
+            testData.Enqueue(item1);
+            testData.Enqueue(item2);
+            testData.Enqueue(item3);
+            testData.Enqueue(item4);
+            testData.Enqueue(item5);
+            testData.Dequeue();
+            testData.Dequeue();
+            testData.Dequeue();
+            int actual = testData.Count;
+            int expected = 2;
+            Assert.Equal(expected, actual);
+
+        }
         /// <summary>
         /// test that enqueues three items and then dequeues the first (FIFO) and returns its value
         /// </summary>
@@ -103,6 +156,55 @@ namespace XUnitTestProject1
             testData.Enqueue(item3);
             bool actual = testData.Enqueue(item4);
             Assert.False(actual);
+        }
+
+        [Fact]
+        public void TestForWrappingIndicesOfBuffer()
+        {
+            CircularBuffer<int> testData = new CircularBuffer<int>(5);
+            int item1 = 6;
+            int item2 = 8;
+            int item3 = 10;
+            int item4 = 15;
+            int item5 = 22;
+            int item6 = 25;
+            int item7 = 33;
+            testData.Enqueue(item1);
+            testData.Enqueue(item2);
+            testData.Enqueue(item3);
+            testData.Enqueue(item4);
+            testData.Enqueue(item5);
+            testData.Dequeue();
+            testData.Enqueue(item6);
+            bool actual = testData.Enqueue(item7);
+            Assert.False(actual);
+
+        }
+
+        [Fact]
+        public void TestForSeveralEnqueuesAndDequeues()
+        {
+            CircularBuffer<int> testData = new CircularBuffer<int>(5);
+            int item1 = 6;
+            int item2 = 8;
+            int item3 = 10;
+            int item4 = 15;
+            int item5 = 22;
+            int item6 = 25;
+            int item7 = 33;
+            testData.Enqueue(item1);
+            testData.Enqueue(item2);
+            testData.Enqueue(item3);
+            testData.Enqueue(item4);
+            testData.Enqueue(item5);
+            testData.Dequeue();
+            testData.Dequeue();
+            testData.Enqueue(item6);
+            testData.Enqueue(item7);
+            int actual = testData.Dequeue();
+            int expected = 10;
+            Assert.Equal(expected, actual);
+
         }
         public IEnumerator GetEnumerator()
         {
