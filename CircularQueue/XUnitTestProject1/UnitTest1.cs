@@ -42,6 +42,9 @@ namespace XUnitTestProject1
 
         }
 
+        /// <summary>
+        /// test that enqueues three items, dequeues one item and then counts number of items in the queue 
+        /// </summary>
         [Fact]
         public void EnqueueThreeDequeueOneItems()
         {
@@ -59,6 +62,9 @@ namespace XUnitTestProject1
         }
 
 
+        /// <summary>
+        /// test that enqueues three items and then dequeues the first (FIFO) and returns its value
+        /// </summary>
         [Fact]
         public void EnqueueThreeDequeueOneReturnValue()
         {
@@ -74,6 +80,10 @@ namespace XUnitTestProject1
             Assert.Equal(expected, actual);
         }
 
+        /// <summary>
+        /// test to attempt to enqueue full queue and returns false
+        /// </summary>
+        [Fact]
         public void EnqueueFullBuffer()
         {
             CircularBuffer<int> testData = new CircularBuffer<int>(3);
