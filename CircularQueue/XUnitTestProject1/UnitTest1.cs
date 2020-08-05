@@ -25,6 +25,9 @@ namespace XUnitTestProject1
             Assert.Throws<InvalidOperationException>(() => testData.Dequeue());
         }
 
+        /// <summary>
+        /// need to include property of Count to be used by the following test methods
+        /// </summary>
         public int Count { get; }
 
         /// <summary>
