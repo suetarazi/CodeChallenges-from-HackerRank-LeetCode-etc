@@ -10,6 +10,9 @@ namespace XUnitTestProject1
 {
     public class UnitTest1 : IEnumerable
     {
+        /// <summary>
+        /// test to check if queue is empty or contains any data
+        /// </summary>
         [Fact]
         public void EmptyQueueTest()
         {
@@ -23,6 +26,10 @@ namespace XUnitTestProject1
         }
 
         public int Count { get; }
+
+        /// <summary>
+        /// test to enqueue items and return the count of items in the queue
+        /// </summary>
         [Fact]
         public void EnqueueItem()
         {
