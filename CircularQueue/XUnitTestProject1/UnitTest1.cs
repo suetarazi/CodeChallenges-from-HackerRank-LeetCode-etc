@@ -8,7 +8,7 @@ using Xunit.Sdk;
 
 namespace XUnitTestProject1
 {
-    public class UnitTest1 : IEnumerable
+    public class UnitTest1 : IEnumerator
     {
         /// <summary>
         /// test to check if queue is empty or contains any data
@@ -28,7 +28,11 @@ namespace XUnitTestProject1
         /// <summary>
         /// need to include property of Count to be used by the following test methods
         /// </summary>
-        public int Count { get; }
+        //public int Count { get; }
+
+        
+
+        object IEnumerator.Current => throw new NotImplementedException();
 
         /// <summary>
         /// test to enqueue items and return the count of items in the queue
@@ -39,7 +43,7 @@ namespace XUnitTestProject1
             CircularBuffer<int> testData = new CircularBuffer<int>(16);
             int item = 5;
             testData.Enqueue(item);
-            int actual = this.Count;
+            int actual = testData.Count;
             int expected = 1;
             Assert.Equal(expected, actual);
 
@@ -59,7 +63,7 @@ namespace XUnitTestProject1
             testData.Enqueue(item2);
             testData.Enqueue(item3);
             testData.Dequeue();
-            int actual = this.Count;
+            int actual = testData.Count;
             int expected = 2;
             Assert.Equal(expected, actual);
         }
@@ -105,7 +109,18 @@ namespace XUnitTestProject1
             throw new NotImplementedException();
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
+        
+        public bool MoveNext()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Reset()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
         {
             throw new NotImplementedException();
         }
