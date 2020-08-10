@@ -3,12 +3,12 @@ using System.IO;
 
 namespace hourglass
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+           // TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
             int[][] arr = new int[6][];
 
@@ -17,30 +17,39 @@ namespace hourglass
                 arr[i] = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
             }
 
-            //int result = Solution.hourglassSum(arr);
-
+            //Solution solution = new Solution();
+            int result = Solution.hourglassSum(arr);
+            Console.WriteLine(result);
             //textWriter.WriteLine(result);
 
-            textWriter.Flush();
-            textWriter.Close();
+            //textWriter.Flush();
+            //textWriter.Close();
 
         }
     }
 
-    class Solution
+    public class Solution
     {
 
         // Complete the hourglassSum function below.
-        static int hourglassSum(int[][] arr)
+        public static int hourglassSum(int[][] arr)
         {
             int sum = 0;
             for (int j = 0; j < arr.Length - 2; j++)
             {
                 for (int i = 0; i < arr.Length; i++)
                 {
-                    int hourglass = i + (i + 1) + (i + 2);
+                    int hourglass = arr[i][j] + arr[i + 1][j] + arr[i + 2][j] + arr[i+1][j+1] + arr[i][j+2] + arr[i+1][j+2] + arr[i+2][j+2];
+                    Console.WriteLine($"hourglass is {hourglass}");
+                    if(hourglass > sum)
+                    {
+                        sum = hourglass;
+                        
+                    }
                 }
+
             }
+            Console.WriteLine($"sum is {sum}");
             return sum;
         }
 
