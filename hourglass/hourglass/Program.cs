@@ -8,14 +8,22 @@ namespace hourglass
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-           // TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+            // TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
-            int[][] arr = new int[6][];
+            int[][] arr = new int[6][]
+                {
+            new int[] { 1, 1, 1, 0, 0, 0 },
+            new int[] { 0, 1, 0, 0, 0, 0 },
+            new int[] { 1, 1, 1, 0, 0, 0 },
+            new int[] { 0, 0, 2, 4, 4, 0 },
+            new int[] { 0, 0, 0, 2, 0, 0 },
+            new int[] { 0, 0, 1, 2, 4, 0 }
+            };
 
-            for (int i = 0; i < 6; i++)
-            {
-                arr[i] = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
-            }
+            //for (int i = 0; i < 6; i++)
+            //{
+            //    arr[i] = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
+            //}
 
             //Solution solution = new Solution();
             int result = Solution.hourglassSum(arr);
