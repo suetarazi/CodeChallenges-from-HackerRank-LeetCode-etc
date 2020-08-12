@@ -1,4 +1,4 @@
-﻿# Hourglass:
+﻿# Hourglass - from HackerRank:
 
 ### Given a  2D Array, :
 
