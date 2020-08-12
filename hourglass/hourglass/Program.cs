@@ -42,7 +42,7 @@ namespace hourglass
         // Complete the hourglassSum function below.
         public static int hourglassSum(int[][] arr)
         {
-            int sum = 0;
+            int sum = int.MinValue;
             for (int j = 0; j < arr.Length - 2; j++)
             {
                 for (int i = 0; i < arr.Length - 2; i++)
