@@ -43,11 +43,11 @@ namespace hourglass
         public static int hourglassSum(int[][] arr)
         {
             int sum = 0;
-            for (int j = 0; j < arr.Length -2; j++)
+            for (int j = 0; j < arr.Length - 2; j++)
             {
-                for (int i = 0; i < arr.Length -2; i++)
+                for (int i = 0; i < arr.Length - 2; i++)
                 {
-                    int hourglass = arr[i][j] + arr[i + 1][j] + arr[i + 2][j] + arr[i+1][j+1] + arr[i][j+2] + arr[i+1][j+2] + arr[i+2][j+2];
+                    int hourglass = arr[i][j] + arr[i][j + 1] + arr[i][j + 2] + arr[i+1][j+1] + arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2];
                     Console.WriteLine($"hourglass is {hourglass}");
                     if(hourglass > sum)
                     {
