@@ -34,7 +34,8 @@ namespace XUnitTestProject1
             string s = " ";
             Program p = new Program();
             string actual = p.SubstringB(s);
-            Assert.null(actual);
+            string expected = " ";
+            Assert.Equal(expected, actual);
 
         }
 
