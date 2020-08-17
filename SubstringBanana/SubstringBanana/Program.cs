@@ -20,7 +20,7 @@ namespace SubstringBanana
     {
         if(string.IsNullOrEmpty(s))
             {
-                return null;
+                return "null";
             }
 
         List<string> list = new List<string>();
