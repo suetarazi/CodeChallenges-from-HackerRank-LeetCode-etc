@@ -19,34 +19,29 @@ namespace SockMerchant
         public int FindMatchingPairsOfSocks(int n, int[] arr)
         {
             Array.Sort(arr);
+            HashSet<int> hashset = new HashSet<int>();
             int matchingPairs=0;
             
-            for(int i = 0; i < arr.Length; i++)
+            foreach(int i in arr)
             {
-                helperMethod(arr[i]);
+                if (!hashset.Contains(i))
+                {
+                    hashset.Add(i);
+                    Console.WriteLine($"Initially added {i}");
 
+                }
+                else if (hashset.Contains(i))
+                {
+                    matchingPairs++;
+                    Console.WriteLine($"We found a pair {i}");
+                    hashset.Remove(i);
+                }
+            }
+
+            Console.WriteLine($"matching pairs = {matchingPairs}");
             return matchingPairs;
-            }
 
-            return -1;
-        }
-
-        public void helperMethod(int i)
-        {
-            int matchingPairs = 0;
-            HashSet<int> hashset = new HashSet<int>();
-            if (!hashset.Contains(i))
-            {
-                hashset.Add(i);
-                Console.WriteLine($"Initially added {i}");
-
-            }
-            else if (hashset.Contains(i))
-            {
-                matchingPairs++;
-                Console.WriteLine($"We found a pair {i}");
-                hashset.Remove(i);
-            }
+            
         }
 
     }
