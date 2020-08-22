@@ -15,32 +15,26 @@ namespace CountingValleys
         {
             //if U = 1 and D = -1; count the number of times the string changes from + to -
             int valleys = 0;
-            //int U = 1;
-            //int D = -1; 
-            char[] arr = s.ToCharArray();
-            int[] numArr = new int[n];
-            for(char c=arr[0]; c<n; c++)
+            int seaLevel = 0;
+             
+            
+            for(int i=0; i<n; i++)
             {
-                if(arr[c] == 'U')
+                if(s[i] == 'U')
                 {
-                    numArr[c] = 1;
+                    seaLevel += 1;
                 }
                 else
                 {
-                    numArr[c] = -1;
+                    seaLevel -= 1;
                 }
 
-            }
-            foreach(int i in numArr)
-            {
-                int sum = 0;
-                if(sum < 0)
+                if(s[i] == 'U' && seaLevel == 0)
                 {
                     valleys++;
                 }
-                sum += numArr[i];
-            }
 
+            }
             return valleys;
         }
 
