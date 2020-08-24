@@ -2,14 +2,14 @@
 
 namespace JumpingOnTheClouds
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
         }
 
-        static int jumpingOnClouds(int[] c)
+        public int jumpingOnClouds(int[] c)
         {
             int totalSteps = 0;
 
