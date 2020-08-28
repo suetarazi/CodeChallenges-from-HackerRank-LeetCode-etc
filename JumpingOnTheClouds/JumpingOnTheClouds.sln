@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
+
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpingOnTheClouds", "JumpingOnTheClouds\JumpingOnTheClouds.csproj", "{991F853E-5515-472D-80F8-31A1C2EDC3FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{97CD0A19-72A1-4E40-AAA6-5C5D04A88413}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

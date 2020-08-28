@@ -19,17 +19,16 @@ namespace RepeatedString
         {
             //abaabaabaa
             //aba 
-            //1. count "a"s in string (result is 2)
-            //2. determine arrayLooping variable
-            //3. determine remainderLoop variable
-            //4. totalCount = (count * arrayLooping) + (forloop of k)
 
             long count = 0;
+            
+            //2. determine arrayLooping variable
             long arrayLooping = n/(s.Length);
+            
+            //3. determine remainderLoop variable
             long remainderLoop = n % s.Length;
-
-            for(int i=0; i<arrayLooping; i++)
-            {
+            
+            //1. count "a"s in string (result is 2)
                 for(int j=0; j<s.Length; j++)
                 {
                     if(s[j]=='a')
@@ -37,16 +36,20 @@ namespace RepeatedString
                         count++;
                     }
                 }
-            }
+
+            long remainderLoopCount = 0;
             for(int k=0; k<remainderLoop; k++)
             {
                 if(s[k]=='a')
                 {
-                    count++;
+                    remainderLoopCount++;
                 }
             }
+
+            //4. totalCount = (count * arrayLooping) + (forloop of k)
+            long totalCount = (count * arrayLooping) + remainderLoopCount;
             Console.WriteLine($"the total count is {count}");
-            return count;
+            return totalCount;
             
             //long arrLength = s.ToArray().Length;
             //string[] inputArr = Enumerable.Repeat(s, Convert.ToInt32(n)).ToArray();
