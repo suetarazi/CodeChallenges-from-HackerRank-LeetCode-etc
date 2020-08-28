@@ -18,5 +18,15 @@ namespace XUnitTestProject1
             int expected = 4;
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Test2()
+        {
+            int[] testArr = new int[] { 0, 0, 0, 1, 0, 0 };
+            Program p = new Program();
+            int actual = p.jumpingOnClouds(testArr);
+            int expected = 3;
+            Assert.Equal(expected, actual);
+        }
     }
 }
