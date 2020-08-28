@@ -20,6 +20,7 @@ namespace JumpingOnTheClouds
             int i = 0;
             while(i<c.Length-1)
             {
+                Console.WriteLine($"I'm in the while loop Mom! This is i {i}");
                 if(c[0]==1)
                 {
                     Console.WriteLine("You are starting with 1");
@@ -43,6 +44,16 @@ namespace JumpingOnTheClouds
                     totalSteps++;
                     i++;
                     i++;
+                    Console.WriteLine($"moving two steps and incrementing {totalSteps}");
+                }
+                else if(c[i+1]==0)
+                {
+                    totalSteps++;
+                    i++;
+                }
+                else
+                {
+                    throw new InvalidOperationException();
                 }
             }
 
