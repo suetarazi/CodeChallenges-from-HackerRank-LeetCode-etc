@@ -11,10 +11,20 @@ namespace Array_Left_Rotation
 
         public int[] LeftRotation(int n, int d, int[] inputArr)
         {
+            
+            while(< d)
+            {
+                int temp = inputArr[0];
 
+                for(int i=0; i<inputArr.Length - 1; i++)
+                {
+                    inputArr[i] = inputArr[i + 1];
+                }
 
+                inputArr[inputArr.Length] = temp;
+            }
 
-            return arr;
+            return inputArr;
         }
     }
 }
