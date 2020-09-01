@@ -13,7 +13,7 @@ namespace SparseArrays
         public static int[] matchingStrings(string[] strings, string[] queries)
         {
             HashSet<string> hashset = new HashSet<string>();
-            foreach(string s in queries)
+            foreach(string s in strings)
             {
                 hashset.Add(s);
             }
@@ -22,7 +22,7 @@ namespace SparseArrays
 
             for (int i = 0; i < resultsArr.Length; i++)
             {
-                foreach (string s in strings)
+                foreach (string s in queries)
                 {
                     int count = 0;
                     if (hashset.Contains(s))
