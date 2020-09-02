@@ -12,7 +12,7 @@ namespace Array_Left_Rotation
             int testd = 4;
             int[] testInput = new int[] { 1, 2, 3, 4, 5 };
             Program p = new Program();
-            p.LeftRotation(testInput, testd);
+            p.LeftRotation2(testInput, testd);
             ////foreach(int num in actual)
             ////{
             ////    Console.WriteLine(string.Join (", ", num));
@@ -39,6 +39,21 @@ namespace Array_Left_Rotation
             Console.WriteLine("{0}", string.Join(" ", inputArr));
             
            return inputArr;
+        }
+
+        public void LeftRotation2(int[] inputArr, int d)
+        {
+            int n = inputArr.Length;
+            //Console.Write(inputArr[d]);
+
+            for(int i=0; i<inputArr.Length; i++)
+            {
+                Console.Write($"{ inputArr[(d + i) % n]} ");
+                
+            }
+
+
+            
         }
     }
 }
