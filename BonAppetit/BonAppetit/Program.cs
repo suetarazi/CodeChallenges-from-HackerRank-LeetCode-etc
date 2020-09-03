@@ -3,17 +3,37 @@ using System.Collections.Generic;
 
 namespace BonAppetit
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
         }
 
-        static void bonAppetit(List<int> bill, int k, int b)
+        public string bonAppetit(List<int> bill, int k, int b)
         {
+            //bill.ToArray();
+            int billSum = 0;
+                        
+            foreach(int item in bill)
+            {
+                billSum += item;
+            }
+            
+            int correctBill = (billSum - bill[k]) / 2;
 
 
+            if(correctBill == b)
+            {
+                Console.WriteLine("Bon Appetit");
+                return "Bon Appetit";
+            }
+            else
+            {
+                int refund = b - correctBill;
+                Console.WriteLine(refund.ToString());
+                return refund.ToString();
+            }
         }
     }
 }
