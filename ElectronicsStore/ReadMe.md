@@ -1,4 +1,4 @@
-# Electronics Store
+# Electronics Store - from Hacker Rank
 
 ## Problem Domain:
 
