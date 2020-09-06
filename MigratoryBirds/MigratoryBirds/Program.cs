@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace MigratoryBirds
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
         }
 
-        static int migratoryBirds(List<int> arr)
+        public static int migratoryBirds(List<int> arr)
         {
             int birdCount = 0;
 
