@@ -2,14 +2,14 @@
 
 namespace CatsAndAMouse
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
         }
 
-        static string catAndMouse(int x, int y, int z)
+        public string catAndMouse(int x, int y, int z)
         {
             string winner = " ";
 
