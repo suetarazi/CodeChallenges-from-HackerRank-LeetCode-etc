@@ -11,9 +11,13 @@ namespace SaveThePrisoner
 
         public int saveThePrisoner(int n, int m, int s)
         {
+            int[] prisoners = new int[n];
+            int arrStop = Math.Abs(n - m);
+            int lastRound = Math.Abs(arrStop - n);
+            int badCandy = lastRound/s;
+            //int badCandy = prisoners[s + lastRound];
 
-
-            return -1;
+            return badCandy;
         }
 
     }
