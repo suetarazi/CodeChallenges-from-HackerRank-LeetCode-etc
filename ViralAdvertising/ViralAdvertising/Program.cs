@@ -12,10 +12,21 @@ namespace ViralAdvertising
 
         public int viralAdvertising(int n)
         {
-            decimal initialRecipients = 5;
-            decimal dailyLikes = Math.Floor(initialRecipients / 2);
+            int cumulative = 0;
+            decimal recipients = 5;
+            decimal dailyLikes = 0;
+            int days = 1;
 
-            return -1;
+            while (days <= n)
+            {
+                dailyLikes = Math.Floor(recipients / 2);
+                recipients = dailyLikes * 3;
+                cumulative += Convert.ToInt32(dailyLikes);
+
+                days++;
+            }
+
+            return cumulative;
         }
     }
 }
