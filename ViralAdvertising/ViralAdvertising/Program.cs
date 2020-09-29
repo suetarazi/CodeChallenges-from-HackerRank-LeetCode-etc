@@ -2,7 +2,7 @@
 
 namespace ViralAdvertising
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -10,9 +10,10 @@ namespace ViralAdvertising
         }
 
 
-        static int viralAdvertising(int n)
+        public int viralAdvertising(int n)
         {
-
+            decimal initialRecipients = 5;
+            decimal dailyLikes = Math.Floor(initialRecipients / 2);
 
             return -1;
         }
