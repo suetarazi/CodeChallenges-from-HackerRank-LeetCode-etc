@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveThePrisoner", "SaveThePrisoner\SaveThePrisoner.csproj", "{A0C52E5E-E967-4426-82EE-809B656026BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{CDB99267-03EC-4AD2-8696-5CF96734673B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A0C52E5E-E967-4426-82EE-809B656026BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0C52E5E-E967-4426-82EE-809B656026BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0C52E5E-E967-4426-82EE-809B656026BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDB99267-03EC-4AD2-8696-5CF96734673B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB99267-03EC-4AD2-8696-5CF96734673B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB99267-03EC-4AD2-8696-5CF96734673B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB99267-03EC-4AD2-8696-5CF96734673B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

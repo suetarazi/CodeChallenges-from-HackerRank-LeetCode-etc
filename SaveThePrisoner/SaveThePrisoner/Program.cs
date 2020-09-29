@@ -2,14 +2,14 @@
 
 namespace SaveThePrisoner
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
         }
 
-        static int saveThePrisoner(int n, int m, int s)
+        public int saveThePrisoner(int n, int m, int s)
         {
 
 
