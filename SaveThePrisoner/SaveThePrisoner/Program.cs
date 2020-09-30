@@ -11,12 +11,17 @@ namespace SaveThePrisoner
 
         public int saveThePrisoner(int n, int m, int s)
         {
-            
-            int arrStop = Math.Abs(n - m);
-            int lastRound = Math.Abs(arrStop - n);
-            int badCandy = s + lastRound - 1;
-            
-            return badCandy;
+            //3 7 3 
+            int steps = m % n;
+            int badCandy = (s + steps -1) % n;
+            if (badCandy == 0)
+            {
+                return s;
+            }
+            else
+            {
+                return badCandy;
+            }
         }
 
     }
