@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace DesignerPdfViewer
 {
@@ -11,9 +15,27 @@ namespace DesignerPdfViewer
 
         public int designerPdfViewer(int[] h, string word)
         {
+            Dictionary<int, int> dictionary = new Dictionary<int, int>();
+            foreach(int i in h)
+            {
+                dictionary.Add(h[i], h[i]);
+            }
+            
 
 
-            return -1; 
+            int maxHeight = 0;
+
+            int[] wordArr = new int[word.Length];
+
+            for(int i=0; i<word.Length; i++)
+            {
+                wordArr[i] = dictionary.;
+            }
+
+            maxHeight = wordArr.Max<int>();
+
+
+            return (maxHeight * word.Length); 
 
         }
     }
