@@ -45,7 +45,7 @@ namespace DesignerPdfViewer
 
             for(int i=0; i<word.Length; i++)
             {
-                wordArr[i] = dictionary.GetValueOrDefault((int)word[i]);
+                wordArr[i] = dictionary.((int)word[i]);
 
             }
 
