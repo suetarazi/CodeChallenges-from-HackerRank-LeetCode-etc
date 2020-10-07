@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -43,21 +44,52 @@ namespace DesignerPdfViewer
             //now take each letter in inputted word, convert each to Ascii to get the Key to look up in the dictionary, then return the value.
 
             int maxHeight = 0;
+            int a_char = (int)'a';
 
             int[] wordArr = new int[word.Length];
 
             for(int i=0; i<word.Length; i++)
             {
+                int height = h[(int)word[i] - a_char];
+                if (height > maxHeight)
+                {
+                    maxHeight = height;
+                }
                 //[key] can go in here in order to retrieve value from dictionary
-                wordArr[i] = dictionary[((int)word[i])];
 
             }
 
-            maxHeight = wordArr.Max<int>();
 
 
             return (maxHeight * word.Length); 
 
         }
+
+    // Return key=value in numbers, value=occurrences of key in numbers
+    // List<int> 1, 3, 3, 3, 5
+    // Dict<int><int> { (1, 1), (3, 3), (5, 1) };
+    // MUST use TryGetValue
+
+    Dictionary<int,int> Histogram(IList<int> numbers)
+    {
+        Dictionary<int, int> dictionary = new Dictionary<int, int>();
+        int count = 0;
+
+        foreach (int value in numbers)
+        {
+            bool a = dictionary.TryGetValue(value, out count);
+
+            
+                dictionary.Add(value, count++);
+
+            
+        }
+        foreach(var d in dictionary)
+        {
+            Console.Write(d.Key.ToString(), d.Value);
+        }
+
+        return dictionary; 
+    }
     }
 }
