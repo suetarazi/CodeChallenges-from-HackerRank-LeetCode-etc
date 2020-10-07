@@ -2,14 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace DesignerPdfViewer
 {
-    public class Program
+    public class Program 
     {
+        
         static void Main(string[] args)
         {
+
             Console.WriteLine("Hello World!");
 
             int[] inputArr = new int[] { 1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
@@ -45,7 +48,8 @@ namespace DesignerPdfViewer
 
             for(int i=0; i<word.Length; i++)
             {
-                wordArr[i] = dictionary.((int)word[i]);
+                //[key] can go in here in order to retrieve value from dictionary
+                wordArr[i] = dictionary[((int)word[i])];
 
             }
 
