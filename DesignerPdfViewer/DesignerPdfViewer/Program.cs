@@ -91,5 +91,27 @@ namespace DesignerPdfViewer
 
         return dictionary; 
     }
+
+        public int CandleCount(int[] inputArr)
+        {
+            int tallestCandle = inputArr[0];
+            int candleCount = 0;
+
+            foreach(int c in inputArr)
+            {
+                if(c>tallestCandle)
+                {
+                    tallestCandle = c;
+                    candleCount = 1;
+                    
+                }
+                if(c==tallestCandle)
+                {
+                    candleCount++;
+                }
+
+            }
+            return tallestCandle;
+        }
     }
 }
