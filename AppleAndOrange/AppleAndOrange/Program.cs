@@ -20,11 +20,16 @@ namespace AppleAndOrange
         /// <param name="oranges">array of oranges and the distances they fall from b</param>
         static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges)
         {
-            int appleCount = 0;
-            int orangeCount = 0;
+            Convert.ToInt64(s);
+            Convert.ToInt64(t);
+            Convert.ToInt64(a);
+            Convert.ToInt64(b);
+
+            long appleCount = 0;
+            long orangeCount = 0;
             for(int i=0; i<apples.Length; i++)
             {
-                if(apples[i]>=(s-a) && (apples[i] <= (t-a)))
+                if(Convert.ToInt64(apples[i])>=(s-a) && (Convert.ToInt64(apples[i]) <= (t-a)))
                     {
                     appleCount++;
                     }
@@ -32,7 +37,7 @@ namespace AppleAndOrange
 
             for(int j=0; j<oranges.Length; j++)
             {
-                if(oranges[j]<=(b-t) && (oranges[j]>=(s-b)))
+                if(Convert.ToInt64(oranges[j])<=(b-t) && (Convert.ToInt64(oranges[j])>=(s-b)))
                 {
                     orangeCount++;
                 }
