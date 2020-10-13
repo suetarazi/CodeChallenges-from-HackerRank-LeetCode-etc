@@ -32,13 +32,15 @@ namespace AppleAndOrange
 
             for(int j=0; j<oranges.Length; j++)
             {
-                if(oranges[j]<(b-t) && (oranges[j]>(b-s)))
+                if(oranges[j]<=(b-t) && (oranges[j]>=(s-b)))
                 {
                     orangeCount++;
                 }
             }
 
-            Console.WriteLine($"{appleCount} {orangeCount}");
+            Console.WriteLine($"{appleCount}");
+            Console.WriteLine($"{orangeCount}");
+            
         }
     }
 }
